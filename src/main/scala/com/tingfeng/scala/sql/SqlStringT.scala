@@ -119,7 +119,7 @@ trait SqlStringT[T <: Any] extends Serializable with SqlT {
 
       }
     }
-    return sBuilder.toString();
+     sBuilder.toString()
   }
   /**
    * 返回处理后的sql语句

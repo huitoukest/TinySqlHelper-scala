@@ -17,48 +17,48 @@ class TablesSql extends SqlStringT[TableSql] {
     if (None == sb) {
       sBuilder = new StringBuilder();
     } else {
-      sBuilder = sb.get;
+      sBuilder = sb.get
     }
     if (!whereList.isEmpty) {
-      sBuilder.append(" ");
-      sBuilder.append(this.getConnectKeyWords());
-      sBuilder.append(" ");
+      sBuilder.append(" ")
+      sBuilder.append(this.getConnectKeyWords().getKeyWords())
+      sBuilder.append(" ")
     }
     for (i <- 0 until whereList.size) {
-      var tableSql = whereList(i);
+      var tableSql = whereList(i)
       if (i > 0) {
-        sBuilder.append(" , ");
+        sBuilder.append(" , ")
       }
-      sBuilder.append(tableSql.getSqlString());
+      sBuilder.append(tableSql.getSqlString())
       if (i == whereList.size) {
-        sBuilder.append(" ");
+        sBuilder.append(" ")
       }
     }
-    return sBuilder.toString();
+     sBuilder.toString()
   }
 
   override def getParamsList(): ArrayBuffer[Any] = {
     if (this.paramsList != null) {
-      this.paramsList.clear();
+      this.paramsList.clear()
     } else {
-      this.paramsList = new ArrayBuffer[Any]();
+      this.paramsList = new ArrayBuffer[Any]()
     }
-    val whereList = this.sqlList;
+    val whereList = this.sqlList
     for (param <- whereList) {
-      this.paramsList.++=(param.getParams());
+      this.paramsList.++=(param.getParams())
     }
-    this.paramsList;
+    this.paramsList
   }
 
   override def getSqlString(): String = {
-    this.getSqlString(None);
+    this.getSqlString(None)
   }
 
   def getDefaultConnectType(): ConnectType = {
-    ConnectType.comma;
+    ConnectType.comma
   }
 
   def getConnectKeyWords(): ConnectKeyWords = {
-    ConnectKeyWords.from;
+    ConnectKeyWords.from
   }
 }

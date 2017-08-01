@@ -1,10 +1,10 @@
 package main.scala.com.tingfeng.scala.constant
 
-sealed class OrderType private (name: String){
+sealed class OrderType private (name: String) extends  SqlKeyWordsT{
    /**
     * 得到关键字
     */
-  def getKeyWords():java.lang.String={
+  override  def getKeyWords():java.lang.String={
       name
    }
 }

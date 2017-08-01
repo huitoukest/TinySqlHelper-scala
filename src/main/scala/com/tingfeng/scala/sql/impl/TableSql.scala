@@ -41,7 +41,7 @@ class TableSql extends SqlT {
     if (null != this.joinSql) {
       val jCondition = this.joinSql;
       sBuilder.append(" ");
-      sBuilder.append(jCondition.getJoinType());
+      sBuilder.append(jCondition.getJoinType().getKeyWords());
       sBuilder.append(" JOIN ");
       val joinSql = jCondition.getSqlString();
       sBuilder.append(joinSql);

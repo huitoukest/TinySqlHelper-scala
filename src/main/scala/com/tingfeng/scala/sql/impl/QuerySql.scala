@@ -26,7 +26,7 @@ class QuerySql  extends SqlT {
 	    this.addNotNullISqlString(sqlList,tables);
 	    this.addNotNullISqlString(sqlList,whereSql);
 	    this.addNotNullISqlString(sqlList,groupBySql);
-      this.addNotNullISqlString(sqlList,havingSql);
+        this.addNotNullISqlString(sqlList,havingSql);
 	    this.addNotNullISqlString(sqlList,orderBySql);
 	    this.addNotNullISqlString(sqlList,limitSql);
 	    sqlList;
@@ -102,7 +102,7 @@ class QuerySql  extends SqlT {
 	 * @param aliesName
 	 * @return
 	 */
-    def  toTableSql(aliesName:String):TableSql={
+    def toTableSql(aliesName:String):TableSql={
         val tables=new TableSql("("+this.getQueryString()+")",aliesName);
         tables.params = (this.getAllParams());
         tables

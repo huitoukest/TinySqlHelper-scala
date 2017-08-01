@@ -1,7 +1,5 @@
 package com.tingfeng.scala.constant
 
-import org.junit.Test
-import org.junit.Assert
 import main.scala.com.tingfeng.scala.constant.ConnectKeyWords
 
 object SqlConnectKeyWordsTest {
