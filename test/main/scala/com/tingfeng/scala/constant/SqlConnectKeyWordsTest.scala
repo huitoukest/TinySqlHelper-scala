@@ -10,6 +10,5 @@ object SqlConnectKeyWordsTest {
   def testPrint() = {
     val select = ConnectKeyWords.select;
     println(select.getKeyWords());
-    print(ConnectKeyWords.groupBy.getOrderValue());
   }
 }
